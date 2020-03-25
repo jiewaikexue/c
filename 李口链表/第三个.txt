@@ -1,0 +1,22 @@
+struct ListNode* middleNode(struct ListNode* head){
+
+struct ListNode *fast=head->next;
+struct ListNode *slow=head;
+if(head->next==NULL&&head==NULL)
+{
+    return head;
+}
+else
+     {      while (1)
+            {
+                
+            slow=slow->next==NULL?slow:slow->next;
+            fast= fast==NULL?NULL:fast->next;
+            fast= fast==NULL?NULL:fast->next;
+            if(fast==NULL)
+            {
+                return slow;
+            }
+            }
+     }
+}

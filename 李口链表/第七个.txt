@@ -1,0 +1,43 @@
+class PalindromeList {
+public:
+    bool chkPalindrome(ListNode* A) {
+        // write code here
+           
+           struct ListNode *M=A;
+   if(A!=0&&A->next!=0)
+    {
+    
+    struct ListNode *x=A;
+    struct ListNode *y=A->next;
+    struct ListNode *a=NULL;
+    struct ListNode *m=NULL;
+       struct ListNode *n=NULL;
+      while(y!=0)
+      {
+
+      a=y->next;
+      y->next=M;  
+      x->next=a;
+      M=y;
+      y=a;
+      }
+       m=M;
+       n=A;
+       while(m!=0&&n!=0)
+       {
+           if(m->val==n->val)
+           {
+               m=m->next;
+               n=n->next;
+              continue;
+           }
+           else return false;
+       }
+       return true;
+    }
+   else 
+   { 
+       return NULL;
+   }
+    }
+};

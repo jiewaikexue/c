@@ -1,0 +1,47 @@
+struct ListNode *detectCycle(struct ListNode *head) {
+    if(!head)return NULL;
+    else{
+    struct ListNode * slow=head;
+    struct ListNode * fast=head->next;
+    int fast_key=2;
+    int slow_key=0;
+    int judge =0;
+    while(slow!=NULL&&fast!=NULL)
+    {
+        if(slow==fast)
+        {
+            judge=1;
+            break;
+        }
+        slow=slow==NULL?NULL:slow->next;
+        fast=fast==NULL?NULL:fast->next;
+        fast=fast==NULL?NULL:fast->next;
+     
+    }
+    if(judge)
+    {
+        struct ListNode * Record=slow;
+       
+        do
+        {
+            slow_key++;
+            slow=slow->next;
+        }while(!(Record==slow));
+        struct ListNode * m=head;
+        struct ListNode * n=m;
+        for(int k=slow_key;k>0;k--)
+        {
+            n=n->next;
+        }
+        struct ListNode *front =m;
+        while(!(m==n))
+        {
+            
+            m=m->next;
+            n=n->next;
+        }
+        return m;
+    }
+    else return NULL;
+}
+}

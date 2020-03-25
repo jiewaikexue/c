@@ -1,0 +1,17 @@
+ 
+           struct ListNode *p=pListHead;
+           struct ListNode *q=pListHead;
+                for(int x=k;x>0;x--)
+                {
+                    if(p==NULL)return NULL;
+                    p=p->next;
+                }
+             while(p)
+             {
+                 q=q->next;
+                 p=p->next;
+             }
+        return q;
+        
+    }
+};

@@ -1,0 +1,25 @@
+    ListNode* partition(ListNode* pHead, int x) {
+        // write code here
+       ListNode  *key=pHead;
+       ListNode  Big=0;
+       ListNode  Lit=0;
+       ListNode  *q=&Lit;
+       ListNode  *p=&Big;
+        if(pHead)
+        {for( ;key!=NULL;key=key->next)
+        {
+            if(key->val<x)
+            {
+                q->next=key;
+                 q=q->next;
+            }else{
+                p->next=key;
+                p=p->next;
+            }
+        }  
+        p->next=NULL;
+        q->next=Big.next;
+        return Lit.next;
+        }
+        else return pHead;
+    }
