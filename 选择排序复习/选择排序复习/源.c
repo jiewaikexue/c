@@ -3,7 +3,7 @@
 #include<Windows.h>
 #include <stdlib.h>
 #pragma warning (disable:4996)
-#define A 200
+#define A 5
 
 int * random_num()
 {
